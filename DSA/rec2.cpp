@@ -1,11 +1,10 @@
 #include<iostream>
 using namespace std;
 
+// Factorial
 int  s( int n){
-    int sum= 0;
-    if (n == 0) return 0;   
-    sum = n + s(n-1);
-    return sum;
+    if (n == 0) return 1;   
+    return n * s(n-1);;
 }
 
 int main(){
