@@ -1,19 +1,41 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-void name_p(string name, int count){
-    if(count > 3)
+// Array swap
+void fun(int f, int a[], int n)
+{
+    if (f >= n / 2)
         return;
-    cout<< name<<endl;
-    count++;
-    name_p(name, count);
-
+    swap(a[f], a[n-f-1]);
+    fun(f + 1, a, n);
 }
 
-int main(){
-    int count= 1;
-    string name;
-    cin >> name;
-    name_p(name, count);
+int main()
+{
+    int n;
+    cout << "Enter the size of the array: " << endl;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    // Array print
+    cout << "Entered array is :" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i];
+    }
+    cout << endl;
+    fun(0, arr, n);
+
+    // Array print after swap
+    cout << "Swapped array is :" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i];
+    }
+
     return 0;
 }
