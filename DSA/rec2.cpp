@@ -1,18 +1,16 @@
 #include<iostream>
 using namespace std;
 
-void name_p( int n, int i){
-    if(i > n)
-        return;
-        name_p(n, i + 1);
-        cout<< i<<endl;
-
+int  s( int n){
+    int sum= 0;
+    if (n == 0) return 0;   
+    sum = n + s(n-1);
+    return sum;
 }
 
 int main(){
     int n;
     cin >> n;
-    int count = 1;
-    name_p(n, count);
+    cout << s(n);
     return 0;
 }
